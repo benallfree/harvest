@@ -1,0 +1,15 @@
+{
+  "name": "flow-engine",
+  "version": "0.0.1",
+  "description": "Virtual Drum Circle",
+  "main": "index.js",
+  "repository": "http://github.com/benallfree/flow-engine",
+  "author": "Ben Allfree <ben@benallfree.com>",
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "rollup-plugin-livereload": "^0.6.0",
+    "rollup-plugin-serve": "^0.6.1"
+  },
+  "dependencies": {}
+}
