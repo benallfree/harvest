@@ -3,14 +3,16 @@ import livereload from 'rollup-plugin-livereload'
 import buble from 'rollup-plugin-buble'
 import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
+import scss from 'rollup-plugin-scss'
 
 export default {
-  external: ['react', 'react-dom', 'lodash', 'axios'],
+  external: ['react', 'react-dom', 'lodash', 'axios', 'pressure'],
   globals: {
     'react': 'React',
     'react-dom': 'ReactDOM',
     'lodash': '_',
-    'axios': 'axios'
+    'axios': 'axios',
+    'pressure': 'Pressure'
   },
   input: 'src/app.js',
   output: {
@@ -19,6 +21,9 @@ export default {
     name: 'flowEngine'
   },
   plugins: [
+    scss({
+      output: 'public/app.css'
+    }),
     buble({
       objectAssign: 'Object.assign'
     }),
