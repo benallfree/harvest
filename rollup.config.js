@@ -5,6 +5,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import scss from 'rollup-plugin-scss'
 import babel from 'rollup-plugin-babel'
 import replace from 'rollup-plugin-replace'
+import fileAsBlob from 'rollup-plugin-file-as-blob'
 
 export default {
   external: ['react', 'react-dom', 'lodash', 'axios', 'pressure', 'konva'],
@@ -30,6 +31,8 @@ export default {
     babel({
       exclude: 'node_modules/**',
       plugins: [
+        ['@babel/plugin-proposal-export-namespace-from'],
+        ['@babel/plugin-proposal-export-default-from'],
         ['@babel/plugin-transform-react-jsx'],
         [
           '@babel/plugin-proposal-decorators',
@@ -73,6 +76,10 @@ export default {
         ],
       },
     }),
+    fileAsBlob({
+      include: ['**/**.png', '**/**.mp3'],
+    }),
+
     serve({ contentBase: 'public', host: '192.168.1.3', port: 10001 }),
     livereload({ watch: 'public' }),
   ],

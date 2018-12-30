@@ -1,8 +1,8 @@
 body,
-html,canvas{
+html,#app{
   height: 100%;
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
   position: fixed;
   background-color: red;
   margin: 0px;
@@ -13,6 +13,6 @@ canvas{
   margin: 0px;
   padding: 0px;
   background-color: black;
-  overflow: auto;
+  overflow: hidden;
   position: fixed;
 }

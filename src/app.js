@@ -1,44 +1,44 @@
-import './app.scss'
-import { ClientEngine } from './ClientEngine'
-import { Pad } from './Pad'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+import { Stage, Layer } from 'react-konva'
 import { Fps } from './Fps'
-import { AudioManager } from './AudioManager'
+import { Djembe } from './Djembe'
 
-const assets = {
-  hi: { name: '54014__domingus__djembe-hi-1' },
-  lo: { name: '54017__domingus__djembe-lo-1' }
+import './app.scss'
+
+class App extends Component {
+  state = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  }
+
+  componentDidMount() {
+    this.sizeWatcherId = setInterval(() => {
+      const dims = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      }
+      if (dims.height === this.state.height && dims.width === this.state.width)
+        return
+      this.setState(dims)
+    }, 100)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.sizeWatcherId)
+  }
+
+  render() {
+    const { width, height } = this.state
+    return (
+      <Stage width={width} height={height}>
+        <Layer>
+          <Fps />
+          <Djembe width={width} height={height} />
+        </Layer>
+      </Stage>
+    )
+  }
 }
 
-const audioManager = new AudioManager(assets)
-
-const objects = [
-  engine => new Pad(engine, {
-    alpha: 1,
-    fadeTo: 0.6,
-    isDebouncing: false,
-    debounceStep: 0.1,
-    x: 0,
-    y: 0,
-    w: w,
-    h: w,
-    playKey: 'hi'
-  }),
-  engine => new Pad(engine, {
-    alpha: 1,
-    fadeTo: 0.6,
-    isDebouncing: false,
-    debounceStep: 0.1,
-    x: w * 1,
-    y: 0,
-    w: w,
-    h: w,
-    playKey: 'lo'
-  }),
-  engine => new Fps(engine, {
-    x: 0, y: 0
-  })
-]
-
-const engine = new ClientEngine({ audioManager, appRoot: '#app' })
-const w = engine.canvas.width / 3
-engine.start(objects)
+render(<App />, document.getElementById('app'))

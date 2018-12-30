@@ -1,26 +1,74 @@
-import { GameObject } from './GameObject'
+import React from 'react'
+import { Rect, Text } from 'react-konva'
+import Konva from 'konva'
+import PropTypes from 'prop-types'
+import './app.scss'
 
-class Fps extends GameObject {
-  constructor (engine, props) {
-    super(engine, { ...props, w: 50, h: 17, frames: 0, start: (new Date()).getSeconds(), fps: 0 })
+class Fps extends React.Component {
+  state = {
+    frameRate: 0,
+    ms: 0,
   }
-  render () {
-    const { engine: { ctx }, state, state: { x, y, w, h } } = this
-    state.frames += 1
-    const now = (new Date()).getSeconds()
-    if (state.start !== now) {
-      state.start = now
-      state.fps = state.frames
-      state.frames = 0
-    }
-    ctx.textBaseline = 'top'
-    ctx.fillStyle = `rgb(50, 50, 50)`
-    ctx.fillRect(x, y, w, h)
+  anim = null
 
-    ctx.fillStyle = 'white'
-    ctx.font = '12px Arial'
-    ctx.fillText(`${state.fps} FPS`, x + 4, y + 4)
+  static defaultProps = {
+    x: 0,
+    y: 0,
+    width: 60,
+    height: 20,
+    color: `rbga(50,50,50,0.8)`,
+    pad: 5,
+  }
+
+  static propTypes = {
+    x: PropTypes.number,
+    y: PropTypes.number,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    pad: PropTypes.number,
+    color: PropTypes.string,
+  }
+
+ 
+  componentDidMount() {
+    this.anim = new Konva.Animation(frame => {
+      if (frame.lastTime < this.state.ms + 1000) return
+      this.setState({
+        frameRate: Math.round(frame.frameRate, 0),
+        ms: frame.lastTime,
+      })
+    })
+    this.anim.start()
+  }
+
+  componentWillUnmount() {
+    this.anim.stop()
+  }
+
+  render() {
+    const { x, y, width, height, color, pad } = this.props
+    return (
+      <>
+        <Rect
+          x={x}
+          y={y}
+          width={width}
+          height={height}
+          fill={color}
+          shadowBlur={5}
+        />
+        <Text
+          align={'center'}
+          x={x}
+          y={y + pad}
+          width={width}
+          text={`${this.state.frameRate} FPS`}
+          fontSize={height - pad * 2}
+          fontFamily={'Arial'}
+          fill={'white'}
+        />
+      </>
+    )
   }
 }
-
 export { Fps }

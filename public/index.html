@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-touch-fullscreen" content="yes" />
-    <script src="https://cdn.jsdelivr.net/combine/npm/axios@0.18.0/dist/axios.min.js,npm/lodash@4.17.11,npm/pressure@2.1.2/dist/pressure.min.js"></script>
-    <link href="app.css" type="text/css"  rel="stylesheet"/>
-  </head>
-  <body>
-    <canvas id="app"></canvas>
-    <script src="app.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <script src="https://cdn.jsdelivr.net/npm/react@16.7.0/umd/react.development.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@16.7.0/umd/react-dom.development.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/konva@2.6.0/konva.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+  <link href="app.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id='app'></div>
+  <script src="app.js"></script>
+</body>
+
 </html>
