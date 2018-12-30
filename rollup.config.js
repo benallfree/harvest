@@ -6,6 +6,9 @@ import scss from 'rollup-plugin-scss'
 import babel from 'rollup-plugin-babel'
 import replace from 'rollup-plugin-replace'
 import fileAsBlob from 'rollup-plugin-file-as-blob'
+import { terser } from 'rollup-plugin-terser'
+
+const BUILD = process.env.BUILD || 'development'
 
 export default {
   external: ['react', 'react-dom', 'lodash', 'axios', 'pressure', 'konva'],
@@ -80,7 +83,9 @@ export default {
       include: ['**/**.png', '**/**.mp3'],
     }),
 
-    serve({ contentBase: 'public', host: '192.168.1.3', port: 10001 }),
-    livereload({ watch: 'public' }),
+    BUILD === 'development' &&
+      serve({ contentBase: 'public', host: '192.168.1.3', port: 10001 }),
+    BUILD === 'development' && livereload({ watch: 'public' }),
+    BUILD === 'production' && terser(),
   ],
 }
