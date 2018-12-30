@@ -42,7 +42,7 @@ class Djembe extends React.Component {
       Math.pow(ringSize * 3, 2),
       Math.pow(ringSize * 4, 2),
       Math.pow(ringSize * 5, 2),
-      ringSize,
+      this.r2,
     ]
     console.log(this)
   }
@@ -53,9 +53,7 @@ class Djembe extends React.Component {
       const distanceFromCenter =
         Math.pow(this.cx - screenX, 2) + Math.pow(this.cy - screenY, 2)
       if (distanceFromCenter <= this.r2) {
-        console.log(this.hitZones, distanceFromCenter)
         const ringIdx = _.findIndex(this.hitZones, z => distanceFromCenter <= z)
-
         AudioManager.play(assets[tapZoneKeys[ringIdx]])
       }
     })
