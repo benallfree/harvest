@@ -4,16 +4,17 @@ import commonjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import scss from 'rollup-plugin-scss'
 import babel from 'rollup-plugin-babel'
-import replace from 'rollup-plugin-replace';
+import replace from 'rollup-plugin-replace'
 
 export default {
-  external: ['react', 'react-dom', 'lodash', 'axios', 'pressure'],
+  external: ['react', 'react-dom', 'lodash', 'axios', 'pressure', 'konva'],
   globals: {
     react: 'React',
     'react-dom': 'ReactDOM',
     lodash: '_',
     axios: 'axios',
     pressure: 'Pressure',
+    konva: 'Konva',
   },
   input: 'src/app.js',
   output: {
@@ -24,12 +25,16 @@ export default {
   plugins: [
     replace({
       ENVIRONMENT: JSON.stringify('development'),
-      'process.env': JSON.stringify({NODE_ENV: 'development'})
+      'process.env.NODE_ENV': JSON.stringify('development'),
     }),
     babel({
       exclude: 'node_modules/**',
       plugins: [
         ['@babel/plugin-transform-react-jsx'],
+        [
+          '@babel/plugin-proposal-decorators',
+          { decoratorsBeforeExport: false },
+        ],
         ['@babel/plugin-proposal-class-properties', { loose: true }],
       ],
     }),
