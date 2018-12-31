@@ -48,15 +48,26 @@ class Djembe extends React.Component {
   }
 
   handleClick = e => {
-    _.each(e.evt.touches, t => {
-      const { screenX, screenY } = t
-      const distanceFromCenter =
-        Math.pow(this.cx - screenX, 2) + Math.pow(this.cy - screenY, 2)
-      if (distanceFromCenter <= this.r2) {
-        const ringIdx = _.findIndex(this.hitZones, z => distanceFromCenter <= z)
-        AudioManager.play(assets[tapZoneKeys[ringIdx]])
-      }
-    })
+    if (e.evt instanceof MouseEvent) {
+      this.tap(e.evt.clientX, e.evt.clientY)
+      return
+    }
+    if (e.evt instanceof TouchEvent) {
+      _.each(e.evt.touches, t => {
+        this.tap(t.clientX, t.clientY)
+      })
+      return
+    }
+    throw new Error('Unrecognized event', e)
+  }
+
+  tap(x, y) {
+    const distanceFromCenter =
+      Math.pow(this.cx - x, 2) + Math.pow(this.cy - y, 2)
+    if (distanceFromCenter <= this.r2) {
+      const ringIdx = _.findIndex(this.hitZones, z => distanceFromCenter <= z)
+      AudioManager.play(assets[tapZoneKeys[ringIdx]])
+    }
   }
 
   render() {

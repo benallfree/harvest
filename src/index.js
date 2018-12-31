@@ -3,7 +3,6 @@ import { render } from 'react-dom'
 import { Stage, Layer } from 'react-konva'
 import { Fps } from './Fps'
 import { Djembe } from './Djembe'
-
 import './app.scss'
 
 class App extends Component {

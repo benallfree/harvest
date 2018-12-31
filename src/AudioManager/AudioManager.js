@@ -1,7 +1,6 @@
 import _ from 'lodash'
 import axios from 'axios'
 import { webAudioTouchUnlock } from './webAudioTouchUnlock'
-import { blobToArrayBuffer } from 'blob-util'
 
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
 
@@ -16,15 +15,13 @@ class AudioManager {
         (blobUrl, k) =>
           new Promise((resolve, reject) => {
             axios
-              .get(blobUrl, { responseType: 'blob' })
+              .get(blobUrl, { responseType: 'arraybuffer' })
               .then(response => {
-                blobToArrayBuffer(response.data).then(ab => {
-                  this.assets.push({
-                    raw: ab,
-                  })
-                  const map = { key: k, id: this.assets.length - 1 }
-                  resolve(map)
+                this.assets.push({
+                  raw: response.data,
                 })
+                const map = { key: k, id: this.assets.length - 1 }
+                resolve(map)
               })
               .catch(error => {
                 console.error(error)
