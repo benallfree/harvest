@@ -533,11 +533,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Liv
 /******/ })["LiveUpdater"];
 });
     LiveUpdater.buildManifest = {
-  "currentBuildId": 1546374665009,
-  "updateUrl": "http://192.168.1.4:4000"
+  "currentBuildId": 1546447361296,
+  "updateUrl": "http://192.168.1.100:4000"
 };
     document.addEventListener("deviceready", (()=> {
-      const liveUpdater = LiveUpdater(LiveUpdater.buildManifest);
-      liveUpdater.checkRepeatedly();
+      const LiveUpdater.instance = LiveUpdater(LiveUpdater.buildManifest);
+      LiveUpdater.instance.checkRepeatedly();
     }), false)
     

@@ -533,9 +533,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Liv
 /******/ })["LiveUpdater"];
 });
     LiveUpdater.buildManifest = {
-  "currentBuildId": 1546374621425,
-  "updateUrl": "http://192.168.1.4:4000",
-  "recheckTimeoutMs": 500
+  "currentBuildId": 1546446586750,
+  "updateUrl": "http://192.168.1.100:4000"
 };
     document.addEventListener("deviceready", (()=> {
       const liveUpdater = LiveUpdater(LiveUpdater.buildManifest);
