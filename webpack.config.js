@@ -20,7 +20,7 @@ const devServer = {
   ],
   host: ip,
   port: 8080,
-  hot: true,
+  // hot: true,
 }
 
 const devServerHost = `http://${devServer.host}:${devServer.port}/`
@@ -68,12 +68,12 @@ module.exports = {
     new ExtraWatchWebpackPlugin({
       dirs: ['../repos/cordova-live-update/dist'],
     }),
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      templateParameters: {
-        host: devServerHost,
-      },
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: './src/index.html',
+    //   templateParameters: {
+    //     host: devServerHost,
+    //   },
+    // }),
     new webpack.DefinePlugin({
       LIVE_UPDATE_URL: JSON.stringify(
         {

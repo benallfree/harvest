@@ -4,9 +4,6 @@ import PropTypes from 'prop-types'
 import moment from 'moment'
 import './app.scss'
 
-const { currentBuildId } = window.LiveUpdater.buildManifest
-const t = moment(currentBuildId)
-
 class LiveUpdate extends React.Component {
   static defaultProps = {
     x: null,
@@ -39,6 +36,9 @@ class LiveUpdate extends React.Component {
   }
 
   render() {
+    if (~window.LiveUpdater) return null
+    const { currentBuildId } = window.LiveUpdater.buildManifest
+    const t = moment(currentBuildId)
     const {
       x,
       y,

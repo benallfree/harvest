@@ -4,5 +4,11 @@
   "useTabs": false,
   "semi": false,
   "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": [".babelrc", ".prettierrc"],
+      "options": { "parser": "json" }
+    }
+  ]
 }

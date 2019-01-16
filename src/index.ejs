@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta http-equiv="Content-Security-Policy" content="
-      default-src * data: blob: ws: wss: gap://ready file://*;
+      default-src * data: blob: ws: wss: gap: file://*;
       style-src * 'unsafe-inline'; 
       script-src * 'unsafe-inline' 'unsafe-eval';
       connect-src * ws: wss:;
@@ -17,8 +17,8 @@
 
 <body>
   <div id='app'></div>
-  <script type="text/javascript" src="<%= host %>cordova.js"></script>
-  <script type="text/javascript" src="<%= host %>liveupdate.js"></script>
+  tester
+  <script type="text/javascript" src="<%= webpackConfig.output.publicPath %>cordova.js"></script>
 </body>
 
 </html>
