@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "./";
+/******/ 	__webpack_require__.p = "http://192.168.1.100:8080/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -2087,7 +2087,7 @@ module.exports = {
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "html {\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  /* make transparent link selection, adjust last value opacity 0 to 1.0 */\n}\n\nbody {\n  -webkit-touch-callout: none;\n  /* prevent callout to copy image, etc when tap to hold */\n  -webkit-text-size-adjust: none;\n  /* prevent webkit from resizing text to fit */\n  -webkit-user-select: none;\n  /* prevent copy paste, to allow, change 'none' to 'text' */\n  background-color: #E4E4E4;\n  background-image: linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #A7A7A7), color-stop(0.51, #E4E4E4));\n  background-attachment: fixed;\n  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;\n  font-size: 12px;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  text-transform: uppercase;\n  width: 100%;\n}\n\nbody {\n  background-color: black;\n  background-image: none;\n}\n", ""]);
+exports.push([module.i, "html {\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  /* make transparent link selection, adjust last value opacity 0 to 1.0 */\n}\n\nbody {\n  -webkit-touch-callout: none;\n  /* prevent callout to copy image, etc when tap to hold */\n  -webkit-text-size-adjust: none;\n  /* prevent webkit from resizing text to fit */\n  -webkit-user-select: none;\n  /* prevent copy paste, to allow, change 'none' to 'text' */\n  background-color: #E4E4E4;\n  background-image: linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #A7A7A7), color-stop(0.51, #E4E4E4));\n  background-attachment: fixed;\n  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;\n  font-size: 12px;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  text-transform: uppercase;\n  width: 100%;\n}\n\nbody,\nhtml, #app {\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n  position: fixed;\n  background-color: black;\n  margin: 0px;\n  padding: 0px;\n}\n\ncanvas {\n  margin: 0px;\n  padding: 0px;\n  background-color: black;\n  overflow: hidden;\n  position: fixed;\n}\n", ""]);
 
 
 
@@ -94962,7 +94962,7 @@ function webAudioTouchUnlock(context) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "./images/head.png?4eb6ed6d56008521012031285d5c8ba2";
+module.exports = "http://192.168.1.100:8080/images/head.png?4eb6ed6d56008521012031285d5c8ba2";
 
 /***/ }),
 
@@ -95489,7 +95489,7 @@ Fps.defaultProps = {
   y: 0,
   width: 60,
   height: 20,
-  color: "rbga(50,50,50,0.8)",
+  color: "rbga(250,250,250,0.8)",
   pad: 5
 };
 Fps.propTypes = {
@@ -95872,7 +95872,6 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log('xzzzxxxben');
       var _this$state = this.state,
           width = _this$state.width,
           height = _this$state.height;

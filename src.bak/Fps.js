@@ -16,7 +16,7 @@ class Fps extends React.Component {
     y: 0,
     width: 60,
     height: 20,
-    color: `rbga(50,50,50,0.8)`,
+    color: `rbga(250,250,250,0.8)`,
     pad: 5,
   }
 

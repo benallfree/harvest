@@ -27,7 +27,6 @@ class Root extends Component {
   }
 
   render() {
-    console.log('xzzzxxxben')
     const { width, height } = this.state
     return (
       <Stage width={width} height={height}>
