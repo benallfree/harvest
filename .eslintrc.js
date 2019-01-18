@@ -4,5 +4,10 @@ module.exports = {
     "parser": "babel-eslint",
     "rules": {
         "prettier/prettier": "error"
+    },
+    "globals": {
+        "LIVEUPDATE": true,
+        "LIVE_UPDATE_URL": true,
+        "cordova": true,
     }
 };
