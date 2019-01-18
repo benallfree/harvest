@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "http://192.168.1.100:8080/";
+/******/ 	__webpack_require__.p = "http://192.168.1.4:8080/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -836,7 +836,7 @@ Axios.prototype.request = function request(config) {
     }, arguments[1]);
   }
 
-  config = utils.merge(defaults, {method: 'get'}, this.defaults, config);
+  config = utils.merge(defaults, this.defaults, { method: 'get' }, config);
   config.method = config.method.toLowerCase();
 
   // Hook up interceptors middleware
@@ -1253,10 +1253,6 @@ var defaults = {
     return data;
   }],
 
-  /**
-   * A timeout in milliseconds to abort a request. If set to 0 (default) a
-   * timeout is not created.
-   */
   timeout: 0,
 
   xsrfCookieName: 'XSRF-TOKEN',
@@ -1411,7 +1407,9 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
       if (utils.isArray(val)) {
         key = key + '[]';
-      } else {
+      }
+
+      if (!utils.isArray(val)) {
         val = [val];
       }
 
@@ -2078,114 +2076,128 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/app.scss":
-/*!***********************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/lib/loader.js??ref--6-3!./src/app.scss ***!
-  \***********************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/Engine/engine.scss":
+/*!*********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/lib/loader.js??ref--6-3!./src/Engine/engine.scss ***!
+  \*********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
-// Module
-exports.push([module.i, "html {\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  /* make transparent link selection, adjust last value opacity 0 to 1.0 */\n}\n\nbody {\n  -webkit-touch-callout: none;\n  /* prevent callout to copy image, etc when tap to hold */\n  -webkit-text-size-adjust: none;\n  /* prevent webkit from resizing text to fit */\n  -webkit-user-select: none;\n  /* prevent copy paste, to allow, change 'none' to 'text' */\n  background-color: #E4E4E4;\n  background-image: linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #A7A7A7), color-stop(0.51, #E4E4E4));\n  background-attachment: fixed;\n  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;\n  font-size: 12px;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  text-transform: uppercase;\n  width: 100%;\n}\n\nbody,\nhtml, #app {\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n  position: fixed;\n  background-color: black;\n  margin: 0px;\n  padding: 0px;\n}\n\ncanvas {\n  margin: 0px;\n  padding: 0px;\n  background-color: black;\n  overflow: hidden;\n  position: fixed;\n}\n", ""]);
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
 
+
+// module
+exports.push([module.i, "body,\nhtml,\n#app {\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n  position: fixed;\n  background-color: black;\n  background-image: none;\n  margin: 0px;\n  padding: 0px;\n}\n\ncanvas {\n  margin: 0px;\n  padding: 0px;\n  background-color: black;\n  overflow: hidden;\n  position: fixed;\n}\n", ""]);
+
+// exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/runtime/api.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
-  \*****************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/app.scss":
+/*!***********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/lib/loader.js??ref--6-3!./src/app.scss ***!
+  \***********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
 
+
+// module
+exports.push([module.i, "html {\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  /* make transparent link selection, adjust last value opacity 0 to 1.0 */\n}\n\nbody {\n  -webkit-touch-callout: none;\n  /* prevent callout to copy image, etc when tap to hold */\n  -webkit-text-size-adjust: none;\n  /* prevent webkit from resizing text to fit */\n  -webkit-user-select: none;\n  /* prevent copy paste, to allow, change 'none' to 'text' */\n  background-color: #E4E4E4;\n  background-image: linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);\n  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #A7A7A7), color-stop(0.51, #E4E4E4));\n  background-attachment: fixed;\n  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;\n  font-size: 12px;\n  height: 100%;\n  margin: 0px;\n  padding: 0px;\n  text-transform: uppercase;\n  width: 100%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 /*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
 */
 // css base code, injected by the css-loader
-module.exports = function (useSourceMap) {
-  var list = []; // return the list of modules as css string
+module.exports = function(useSourceMap) {
+	var list = [];
 
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item, useSourceMap);
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
 
-      if (item[2]) {
-        return '@media ' + item[2] + '{' + content + '}';
-      } else {
-        return content;
-      }
-    }).join('');
-  }; // import a list of modules into the list
-
-
-  list.i = function (modules, mediaQuery) {
-    if (typeof modules === 'string') {
-      modules = [[null, modules, '']];
-    }
-
-    var alreadyImportedModules = {};
-
-    for (var i = 0; i < this.length; i++) {
-      var id = this[i][0];
-
-      if (id != null) {
-        alreadyImportedModules[id] = true;
-      }
-    }
-
-    for (i = 0; i < modules.length; i++) {
-      var item = modules[i]; // skip already imported module
-      // this implementation is not 100% perfect for weird media query combinations
-      // when a module is imported multiple times with different media queries.
-      // I hope this will never occur (Hey this way we have smaller bundles)
-
-      if (item[0] == null || !alreadyImportedModules[item[0]]) {
-        if (mediaQuery && !item[2]) {
-          item[2] = mediaQuery;
-        } else if (mediaQuery) {
-          item[2] = '(' + item[2] + ') and (' + mediaQuery + ')';
-        }
-
-        list.push(item);
-      }
-    }
-  };
-
-  return list;
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
 };
 
 function cssWithMappingToString(item, useSourceMap) {
-  var content = item[1] || '';
-  var cssMapping = item[3];
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
 
-  if (!cssMapping) {
-    return content;
-  }
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
 
-  if (useSourceMap && typeof btoa === 'function') {
-    var sourceMapping = toComment(cssMapping);
-    var sourceURLs = cssMapping.sources.map(function (source) {
-      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';
-    });
-    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-  }
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
 
-  return [content].join('\n');
-} // Adapted from convert-source-map (MIT)
-
-
-function toComment(sourceMap) {
-  // eslint-disable-next-line no-undef
-  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-  return '/*# ' + data + ' */';
+	return [content].join('\n');
 }
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
 
 /***/ }),
 
@@ -94775,30 +94787,34 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "App", function() { return App; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "App", function() { return App; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_hot_loader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js");
-/* harmony import */ var react_hot_loader__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_hot_loader__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Root */ "./src/Root.js");
-/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.scss */ "./src/app.scss");
-/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_app_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.scss */ "./src/app.scss");
+/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_app_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Engine__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Engine */ "./src/Engine/index.js");
+/* harmony import */ var _Game__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Game */ "./src/Game/index.js");
 
 
 
 
-var App = Object(react_hot_loader__WEBPACK_IMPORTED_MODULE_1__["hot"])(module)(function (props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Root__WEBPACK_IMPORTED_MODULE_2__["Root"], null);
-});
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+var App = function App(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Engine__WEBPACK_IMPORTED_MODULE_2__["Engine"], {
+    gameRender: function gameRender(props) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Game__WEBPACK_IMPORTED_MODULE_3__["Game"], props);
+    }
+  });
+};
+
+
 
 /***/ }),
 
-/***/ "./src/AudioManager/AudioManager.js":
-/*!******************************************!*\
-  !*** ./src/AudioManager/AudioManager.js ***!
-  \******************************************/
+/***/ "./src/Engine/AudioManager/AudioManager.js":
+/*!*************************************************!*\
+  !*** ./src/Engine/AudioManager/AudioManager.js ***!
+  \*************************************************/
 /*! exports provided: AudioManager */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -94813,7 +94829,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _webAudioTouchUnlock__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./webAudioTouchUnlock */ "./src/AudioManager/webAudioTouchUnlock.js");
+/* harmony import */ var _webAudioTouchUnlock__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./webAudioTouchUnlock */ "./src/Engine/AudioManager/webAudioTouchUnlock.js");
 
 
 
@@ -94904,26 +94920,26 @@ var AudioManagerObj = new AudioManager();
 
 /***/ }),
 
-/***/ "./src/AudioManager/index.js":
-/*!***********************************!*\
-  !*** ./src/AudioManager/index.js ***!
-  \***********************************/
+/***/ "./src/Engine/AudioManager/index.js":
+/*!******************************************!*\
+  !*** ./src/Engine/AudioManager/index.js ***!
+  \******************************************/
 /*! exports provided: AudioManager */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AudioManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AudioManager */ "./src/AudioManager/AudioManager.js");
+/* harmony import */ var _AudioManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AudioManager */ "./src/Engine/AudioManager/AudioManager.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AudioManager", function() { return _AudioManager__WEBPACK_IMPORTED_MODULE_0__["AudioManager"]; });
 
 
 
 /***/ }),
 
-/***/ "./src/AudioManager/webAudioTouchUnlock.js":
-/*!*************************************************!*\
-  !*** ./src/AudioManager/webAudioTouchUnlock.js ***!
-  \*************************************************/
+/***/ "./src/Engine/AudioManager/webAudioTouchUnlock.js":
+/*!********************************************************!*\
+  !*** ./src/Engine/AudioManager/webAudioTouchUnlock.js ***!
+  \********************************************************/
 /*! exports provided: webAudioTouchUnlock */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -94955,420 +94971,140 @@ function webAudioTouchUnlock(context) {
 
 /***/ }),
 
-/***/ "./src/Djembe/assets/head.png":
-/*!************************************!*\
-  !*** ./src/Djembe/assets/head.png ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "http://192.168.1.100:8080/images/head.png?4eb6ed6d56008521012031285d5c8ba2";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/index.js":
-/*!************************************!*\
-  !*** ./src/Djembe/assets/index.js ***!
-  \************************************/
-/*! exports provided: logo, samples */
+/***/ "./src/Engine/Engine.js":
+/*!******************************!*\
+  !*** ./src/Engine/Engine.js ***!
+  \******************************/
+/*! exports provided: Engine */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _head_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./head.png */ "./src/Djembe/assets/head.png");
-/* harmony import */ var _head_png__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_head_png__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "logo", function() { return _head_png__WEBPACK_IMPORTED_MODULE_0___default.a; });
-/* harmony import */ var _samples__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./samples */ "./src/Djembe/assets/samples/index.js");
-/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "samples", function() { return _samples__WEBPACK_IMPORTED_MODULE_1__; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Engine", function() { return Engine; });
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-konva */ "./node_modules/react-konva/lib/ReactKonva.js");
+/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Fps__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Fps */ "./src/Engine/Fps.js");
+/* harmony import */ var _LiveUpdate__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./LiveUpdate */ "./src/Engine/LiveUpdate.js");
+/* harmony import */ var _engine_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./engine.scss */ "./src/Engine/engine.scss");
+/* harmony import */ var _engine_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_engine_scss__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
 
 
-/***/ }),
 
-/***/ "./src/Djembe/assets/samples/double.mp3":
-/*!**********************************************!*\
-  !*** ./src/Djembe/assets/samples/double.mp3 ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "68d3f566d4db0b5c2f9d978bf04127eb.mp3";
 
-/***/ }),
 
-/***/ "./src/Djembe/assets/samples/hi1.mp3":
-/*!*******************************************!*\
-  !*** ./src/Djembe/assets/samples/hi1.mp3 ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "d90f6c5c792171a5f2ed15cedc08522d.mp3";
 
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/hi2.mp3":
-/*!*******************************************!*\
-  !*** ./src/Djembe/assets/samples/hi2.mp3 ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "b89abe81c6baa0b40162225a3fefe4eb.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/hi3.mp3":
-/*!*******************************************!*\
-  !*** ./src/Djembe/assets/samples/hi3.mp3 ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "b6ed76403afaaa574cc0258897f33390.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/index.js":
-/*!********************************************!*\
-  !*** ./src/Djembe/assets/samples/index.js ***!
-  \********************************************/
-/*! exports provided: hi1, hi2, hi3, mid1, mid2, mid3, mid4, lo1, lo2, lo3, double, tick, loking */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _hi1_mp3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hi1.mp3 */ "./src/Djembe/assets/samples/hi1.mp3");
-/* harmony import */ var _hi1_mp3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hi1_mp3__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "hi1", function() { return _hi1_mp3__WEBPACK_IMPORTED_MODULE_0___default.a; });
-/* harmony import */ var _hi2_mp3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hi2.mp3 */ "./src/Djembe/assets/samples/hi2.mp3");
-/* harmony import */ var _hi2_mp3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_hi2_mp3__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "hi2", function() { return _hi2_mp3__WEBPACK_IMPORTED_MODULE_1___default.a; });
-/* harmony import */ var _hi3_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hi3.mp3 */ "./src/Djembe/assets/samples/hi3.mp3");
-/* harmony import */ var _hi3_mp3__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_hi3_mp3__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "hi3", function() { return _hi3_mp3__WEBPACK_IMPORTED_MODULE_2___default.a; });
-/* harmony import */ var _mid1_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mid1.mp3 */ "./src/Djembe/assets/samples/mid1.mp3");
-/* harmony import */ var _mid1_mp3__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_mid1_mp3__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "mid1", function() { return _mid1_mp3__WEBPACK_IMPORTED_MODULE_3___default.a; });
-/* harmony import */ var _mid2_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mid2.mp3 */ "./src/Djembe/assets/samples/mid2.mp3");
-/* harmony import */ var _mid2_mp3__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_mid2_mp3__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "mid2", function() { return _mid2_mp3__WEBPACK_IMPORTED_MODULE_4___default.a; });
-/* harmony import */ var _mid3_mp3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mid3.mp3 */ "./src/Djembe/assets/samples/mid3.mp3");
-/* harmony import */ var _mid3_mp3__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_mid3_mp3__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "mid3", function() { return _mid3_mp3__WEBPACK_IMPORTED_MODULE_5___default.a; });
-/* harmony import */ var _mid4_mp3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./mid4.mp3 */ "./src/Djembe/assets/samples/mid4.mp3");
-/* harmony import */ var _mid4_mp3__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_mid4_mp3__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "mid4", function() { return _mid4_mp3__WEBPACK_IMPORTED_MODULE_6___default.a; });
-/* harmony import */ var _lo1_mp3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lo1.mp3 */ "./src/Djembe/assets/samples/lo1.mp3");
-/* harmony import */ var _lo1_mp3__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_lo1_mp3__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "lo1", function() { return _lo1_mp3__WEBPACK_IMPORTED_MODULE_7___default.a; });
-/* harmony import */ var _lo2_mp3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lo2.mp3 */ "./src/Djembe/assets/samples/lo2.mp3");
-/* harmony import */ var _lo2_mp3__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_lo2_mp3__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "lo2", function() { return _lo2_mp3__WEBPACK_IMPORTED_MODULE_8___default.a; });
-/* harmony import */ var _lo3_mp3__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lo3.mp3 */ "./src/Djembe/assets/samples/lo3.mp3");
-/* harmony import */ var _lo3_mp3__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_lo3_mp3__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "lo3", function() { return _lo3_mp3__WEBPACK_IMPORTED_MODULE_9___default.a; });
-/* harmony import */ var _double_mp3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./double.mp3 */ "./src/Djembe/assets/samples/double.mp3");
-/* harmony import */ var _double_mp3__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_double_mp3__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "double", function() { return _double_mp3__WEBPACK_IMPORTED_MODULE_10___default.a; });
-/* harmony import */ var _tick_mp3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./tick.mp3 */ "./src/Djembe/assets/samples/tick.mp3");
-/* harmony import */ var _tick_mp3__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_tick_mp3__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "tick", function() { return _tick_mp3__WEBPACK_IMPORTED_MODULE_11___default.a; });
-/* harmony import */ var _loking_mp3__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./loking.mp3 */ "./src/Djembe/assets/samples/loking.mp3");
-/* harmony import */ var _loking_mp3__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_loking_mp3__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "loking", function() { return _loking_mp3__WEBPACK_IMPORTED_MODULE_12___default.a; });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/lo1.mp3":
-/*!*******************************************!*\
-  !*** ./src/Djembe/assets/samples/lo1.mp3 ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "846e1cba88819cdaf23bcb43622abd68.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/lo2.mp3":
-/*!*******************************************!*\
-  !*** ./src/Djembe/assets/samples/lo2.mp3 ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "80761b857c521939e21691085983b8a5.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/lo3.mp3":
-/*!*******************************************!*\
-  !*** ./src/Djembe/assets/samples/lo3.mp3 ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "90a850d3636da0437786e900ea6fd46f.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/loking.mp3":
-/*!**********************************************!*\
-  !*** ./src/Djembe/assets/samples/loking.mp3 ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "29d711ef50d5271369307c5371f221ec.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/mid1.mp3":
-/*!********************************************!*\
-  !*** ./src/Djembe/assets/samples/mid1.mp3 ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "8a0741cf976fc7394551cbede9dbe182.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/mid2.mp3":
-/*!********************************************!*\
-  !*** ./src/Djembe/assets/samples/mid2.mp3 ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "b57927353c24177694902f640bb91675.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/mid3.mp3":
-/*!********************************************!*\
-  !*** ./src/Djembe/assets/samples/mid3.mp3 ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "e568a4d1ae44e2d7c5a20df7dd32bd71.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/mid4.mp3":
-/*!********************************************!*\
-  !*** ./src/Djembe/assets/samples/mid4.mp3 ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "b04fa256416974df54b81909c9a98726.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/assets/samples/tick.mp3":
-/*!********************************************!*\
-  !*** ./src/Djembe/assets/samples/tick.mp3 ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "5494d59ce4f318407ade5f8264d4fa9f.mp3";
-
-/***/ }),
-
-/***/ "./src/Djembe/index.js":
-/*!*****************************!*\
-  !*** ./src/Djembe/index.js ***!
-  \*****************************/
-/*! exports provided: Djembe */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Djembe", function() { return Djembe; });
-/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
-/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _GameImage__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../GameImage */ "./src/GameImage.js");
-/* harmony import */ var _geometry__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../geometry */ "./src/geometry/index.js");
-/* harmony import */ var _AudioManager__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../AudioManager */ "./src/AudioManager/index.js");
-/* harmony import */ var _assets__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./assets */ "./src/Djembe/assets/index.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-var assets = {};
-_AudioManager__WEBPACK_IMPORTED_MODULE_11__["AudioManager"].addAssets(_assets__WEBPACK_IMPORTED_MODULE_12__["samples"]).then(function (results) {
-  lodash__WEBPACK_IMPORTED_MODULE_8___default.a.each(results, function (v) {
-    assets[v.key] = v.id;
-    console.log('asset ready', v);
-  });
-});
-var tapZoneKeys = ['loking', 'mid4', 'mid2', 'hi1', 'hi3', 'hi2'];
-
-var Djembe =
+var Engine =
 /*#__PURE__*/
-function (_React$Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6___default()(Djembe, _React$Component);
+function (_Component) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(Engine, _Component);
 
-  function Djembe(props) {
+  function Engine() {
+    var _getPrototypeOf2;
+
     var _this;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Djembe);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Engine);
 
-    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default()(Djembe).call(this, props));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
 
-    _this.handleClick = function (e) {
-      if (e.evt instanceof MouseEvent) {
-        _this.tap(e.evt.clientX, e.evt.clientY);
-
-        return;
-      }
-
-      if (e.evt instanceof TouchEvent) {
-        lodash__WEBPACK_IMPORTED_MODULE_8___default.a.each(e.evt.touches, function (t) {
-          _this.tap(t.clientX, t.clientY);
-        });
-
-        return;
-      }
-
-      throw new Error('Unrecognized event', e);
+    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(Engine)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this.state = {
+      width: window.innerWidth,
+      height: window.innerHeight
     };
-
-    _this.image = new window.Image();
-    _this.image.src = _assets__WEBPACK_IMPORTED_MODULE_12__["logo"];
-
-    _this.calc();
-
     return _this;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Djembe, [{
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      this.calc();
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Engine, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this.sizeWatcherId = setInterval(function () {
+        var dims = {
+          width: window.innerWidth,
+          height: window.innerHeight
+        };
+        if (dims.height === _this2.state.height && dims.width === _this2.state.width) return;
+
+        _this2.setState(dims);
+      }, 100);
     }
   }, {
-    key: "calc",
-    value: function calc() {
-      var _this$props = this.props,
-          x = _this$props.x,
-          y = _this$props.y,
-          width = _this$props.width,
-          height = _this$props.height;
-      this.cx = x + width / 2;
-      this.cy = y + height / 2;
-      this.r = Math.min(width / 2, height / 2);
-      var ringSize = this.r / 6;
-      this.r2 = Math.pow(this.r, 2);
-      this.hitZones = [Math.pow(ringSize * 0.5, 2), Math.pow(ringSize * 2, 2), Math.pow(ringSize * 3, 2), Math.pow(ringSize * 4, 2), Math.pow(ringSize * 5, 2), this.r2];
-      console.log(this);
-    }
-  }, {
-    key: "tap",
-    value: function tap(x, y) {
-      var distanceFromCenter = Math.pow(this.cx - x, 2) + Math.pow(this.cy - y, 2);
-
-      if (distanceFromCenter <= this.r2) {
-        var ringIdx = lodash__WEBPACK_IMPORTED_MODULE_8___default.a.findIndex(this.hitZones, function (z) {
-          return distanceFromCenter <= z;
-        });
-
-        _AudioManager__WEBPACK_IMPORTED_MODULE_11__["AudioManager"].play(assets[tapZoneKeys[ringIdx]]);
-      }
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      clearInterval(this.sizeWatcherId);
     }
   }, {
     key: "render",
     value: function render() {
-      var _this$props2 = this.props,
-          x = _this$props2.x,
-          y = _this$props2.y,
-          width = _this$props2.width,
-          height = _this$props2.height;
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_GameImage__WEBPACK_IMPORTED_MODULE_9__["GameImage"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({
-        onClick: this.handleClick,
-        onTouchStart: this.handleClick,
-        src: _assets__WEBPACK_IMPORTED_MODULE_12__["logo"],
-        keepAspect: true,
-        centerInContainer: true
-      }, {
-        x: x,
-        y: y,
+      var _this$props = this.props,
+          showOta = _this$props.showOta,
+          showFps = _this$props.showFps,
+          gameRender = _this$props.gameRender;
+      var _this$state = this.state,
+          width = _this$state.width,
+          height = _this$state.height;
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_konva__WEBPACK_IMPORTED_MODULE_6__["Stage"], {
         width: width,
         height: height
-      }));
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_konva__WEBPACK_IMPORTED_MODULE_6__["Layer"], null, showFps && react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Fps__WEBPACK_IMPORTED_MODULE_7__["Fps"], null), showOta && react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_LiveUpdate__WEBPACK_IMPORTED_MODULE_8__["LiveUpdate"], {
+        screenWidth: width,
+        screenHeight: height
+      }), gameRender({
+        width: width,
+        height: height
+      })));
     }
   }]);
 
-  return Djembe;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+  return Engine;
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
 
-Djembe.defaultProps = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, _geometry__WEBPACK_IMPORTED_MODULE_10__["RectangleProps"].defaultProps);
-Djembe.propTypes = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, _geometry__WEBPACK_IMPORTED_MODULE_10__["RectangleProps"].propTypes);
+Engine.defaultProps = {
+  showFps: true,
+  showOta: true,
+  gameRender: function gameRender(_ref) {
+    var width = _ref.width;
+    return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_konva__WEBPACK_IMPORTED_MODULE_6__["Text"], {
+      align: 'center',
+      x: 0,
+      y: 50,
+      width: width,
+      text: "Your game goes here.",
+      fontSize: 50,
+      fontFamily: 'Arial',
+      fill: 'white'
+    });
+  }
+};
 
 
 /***/ }),
 
-/***/ "./src/Fps.js":
-/*!********************!*\
-  !*** ./src/Fps.js ***!
-  \********************/
+/***/ "./src/Engine/Fps.js":
+/*!***************************!*\
+  !*** ./src/Engine/Fps.js ***!
+  \***************************/
 /*! exports provided: Fps */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -95393,9 +95129,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var konva__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(konva__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.scss */ "./src/app.scss");
-/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_app_scss__WEBPACK_IMPORTED_MODULE_9__);
-
 
 
 
@@ -95504,10 +95237,10 @@ Fps.propTypes = {
 
 /***/ }),
 
-/***/ "./src/GameImage.js":
-/*!**************************!*\
-  !*** ./src/GameImage.js ***!
-  \**************************/
+/***/ "./src/Engine/GameImage.js":
+/*!*********************************!*\
+  !*** ./src/Engine/GameImage.js ***!
+  \*********************************/
 /*! exports provided: GameImage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -95536,7 +95269,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _geometry__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./geometry */ "./src/geometry/index.js");
+/* harmony import */ var _geometry__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./geometry */ "./src/Engine/geometry/index.js");
 
 
 
@@ -95659,10 +95392,10 @@ GameImage.propTypes = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODU
 
 /***/ }),
 
-/***/ "./src/LiveUpdate.js":
-/*!***************************!*\
-  !*** ./src/LiveUpdate.js ***!
-  \***************************/
+/***/ "./src/Engine/LiveUpdate.js":
+/*!**********************************!*\
+  !*** ./src/Engine/LiveUpdate.js ***!
+  \**********************************/
 /*! exports provided: LiveUpdate */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -95685,11 +95418,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.scss */ "./src/app.scss");
-/* harmony import */ var _app_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_app_scss__WEBPACK_IMPORTED_MODULE_9__);
-
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -95730,7 +95460,7 @@ function (_React$Component) {
     value: function render() {
       if (~window.LiveUpdater) return null;
       var currentBuildId = window.LiveUpdater.buildManifest.currentBuildId;
-      var t = moment__WEBPACK_IMPORTED_MODULE_8___default()(currentBuildId);
+      var t = moment__WEBPACK_IMPORTED_MODULE_9___default()(currentBuildId);
       var _this$props = this.props,
           x = _this$props.x,
           y = _this$props.y,
@@ -95787,123 +95517,15 @@ LiveUpdate.propTypes = {
 
 /***/ }),
 
-/***/ "./src/Root.js":
-/*!*********************!*\
-  !*** ./src/Root.js ***!
-  \*********************/
-/*! exports provided: Root */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Root", function() { return Root; });
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-konva */ "./node_modules/react-konva/lib/ReactKonva.js");
-/* harmony import */ var react_konva__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_konva__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _Fps__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Fps */ "./src/Fps.js");
-/* harmony import */ var _Djembe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Djembe */ "./src/Djembe/index.js");
-/* harmony import */ var _LiveUpdate__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./LiveUpdate */ "./src/LiveUpdate.js");
-
-
-
-
-
-
-
-
-
-
-
-var Root =
-/*#__PURE__*/
-function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(Root, _Component);
-
-  function Root() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Root);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(Root)).call.apply(_getPrototypeOf2, [this].concat(args)));
-    _this.state = {
-      width: window.innerWidth,
-      height: window.innerHeight
-    };
-    return _this;
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Root, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      this.sizeWatcherId = setInterval(function () {
-        var dims = {
-          width: window.innerWidth,
-          height: window.innerHeight
-        };
-        if (dims.height === _this2.state.height && dims.width === _this2.state.width) return;
-
-        _this2.setState(dims);
-      }, 100);
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      clearInterval(this.sizeWatcherId);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$state = this.state,
-          width = _this$state.width,
-          height = _this$state.height;
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_konva__WEBPACK_IMPORTED_MODULE_6__["Stage"], {
-        width: width,
-        height: height
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_konva__WEBPACK_IMPORTED_MODULE_6__["Layer"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Fps__WEBPACK_IMPORTED_MODULE_7__["Fps"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_LiveUpdate__WEBPACK_IMPORTED_MODULE_9__["LiveUpdate"], {
-        screenWidth: width,
-        screenHeight: height
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_Djembe__WEBPACK_IMPORTED_MODULE_8__["Djembe"], {
-        width: width,
-        height: height
-      })));
-    }
-  }]);
-
-  return Root;
-}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
-
-
-
-/***/ }),
-
-/***/ "./src/app.scss":
-/*!**********************!*\
-  !*** ./src/app.scss ***!
-  \**********************/
+/***/ "./src/Engine/engine.scss":
+/*!********************************!*\
+  !*** ./src/Engine/engine.scss ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/src??ref--6-2!../node_modules/sass-loader/lib/loader.js??ref--6-3!./app.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/app.scss");
+var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/postcss-loader/src??ref--6-2!../../node_modules/sass-loader/lib/loader.js??ref--6-3!./engine.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/Engine/engine.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -95917,7 +95539,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -95925,10 +95547,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./src/geometry/RectangleProps.js":
-/*!****************************************!*\
-  !*** ./src/geometry/RectangleProps.js ***!
-  \****************************************/
+/***/ "./src/Engine/geometry/RectangleProps.js":
+/*!***********************************************!*\
+  !*** ./src/Engine/geometry/RectangleProps.js ***!
+  \***********************************************/
 /*! exports provided: RectangleProps */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -95956,10 +95578,10 @@ var RectangleProps = {
 
 /***/ }),
 
-/***/ "./src/geometry/center.js":
-/*!********************************!*\
-  !*** ./src/geometry/center.js ***!
-  \********************************/
+/***/ "./src/Engine/geometry/center.js":
+/*!***************************************!*\
+  !*** ./src/Engine/geometry/center.js ***!
+  \***************************************/
 /*! exports provided: center */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -95977,10 +95599,10 @@ function center(src, dst) {
 
 /***/ }),
 
-/***/ "./src/geometry/constrain.js":
-/*!***********************************!*\
-  !*** ./src/geometry/constrain.js ***!
-  \***********************************/
+/***/ "./src/Engine/geometry/constrain.js":
+/*!******************************************!*\
+  !*** ./src/Engine/geometry/constrain.js ***!
+  \******************************************/
 /*! exports provided: constrain */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -96010,27 +95632,561 @@ function constrain(src, dst) {
 
 /***/ }),
 
-/***/ "./src/geometry/index.js":
-/*!*******************************!*\
-  !*** ./src/geometry/index.js ***!
-  \*******************************/
+/***/ "./src/Engine/geometry/index.js":
+/*!**************************************!*\
+  !*** ./src/Engine/geometry/index.js ***!
+  \**************************************/
 /*! exports provided: center, constrain, RectangleProps */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _center__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./center */ "./src/geometry/center.js");
+/* harmony import */ var _center__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./center */ "./src/Engine/geometry/center.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "center", function() { return _center__WEBPACK_IMPORTED_MODULE_0__["center"]; });
 
-/* harmony import */ var _constrain__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constrain */ "./src/geometry/constrain.js");
+/* harmony import */ var _constrain__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constrain */ "./src/Engine/geometry/constrain.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "constrain", function() { return _constrain__WEBPACK_IMPORTED_MODULE_1__["constrain"]; });
 
-/* harmony import */ var _RectangleProps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RectangleProps */ "./src/geometry/RectangleProps.js");
+/* harmony import */ var _RectangleProps__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./RectangleProps */ "./src/Engine/geometry/RectangleProps.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RectangleProps", function() { return _RectangleProps__WEBPACK_IMPORTED_MODULE_2__["RectangleProps"]; });
 
 
 
 
+
+/***/ }),
+
+/***/ "./src/Engine/index.js":
+/*!*****************************!*\
+  !*** ./src/Engine/index.js ***!
+  \*****************************/
+/*! exports provided: Engine, GameImage, AudioManager, center, constrain, RectangleProps */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Engine__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Engine */ "./src/Engine/Engine.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Engine", function() { return _Engine__WEBPACK_IMPORTED_MODULE_0__["Engine"]; });
+
+/* harmony import */ var _AudioManager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AudioManager */ "./src/Engine/AudioManager/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AudioManager", function() { return _AudioManager__WEBPACK_IMPORTED_MODULE_1__["AudioManager"]; });
+
+/* harmony import */ var _geometry__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./geometry */ "./src/Engine/geometry/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "center", function() { return _geometry__WEBPACK_IMPORTED_MODULE_2__["center"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "constrain", function() { return _geometry__WEBPACK_IMPORTED_MODULE_2__["constrain"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RectangleProps", function() { return _geometry__WEBPACK_IMPORTED_MODULE_2__["RectangleProps"]; });
+
+/* harmony import */ var _GameImage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GameImage */ "./src/Engine/GameImage.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GameImage", function() { return _GameImage__WEBPACK_IMPORTED_MODULE_3__["GameImage"]; });
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/head.png":
+/*!*****************************************!*\
+  !*** ./src/Game/Djembe/assets/head.png ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "http://192.168.1.4:8080/images/head.png?4eb6ed6d56008521012031285d5c8ba2";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/index.js":
+/*!*****************************************!*\
+  !*** ./src/Game/Djembe/assets/index.js ***!
+  \*****************************************/
+/*! exports provided: logo, samples */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _head_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./head.png */ "./src/Game/Djembe/assets/head.png");
+/* harmony import */ var _head_png__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_head_png__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "logo", function() { return _head_png__WEBPACK_IMPORTED_MODULE_0___default.a; });
+/* harmony import */ var _samples__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./samples */ "./src/Game/Djembe/assets/samples/index.js");
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "samples", function() { return _samples__WEBPACK_IMPORTED_MODULE_1__; });
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/double.mp3":
+/*!***************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/double.mp3 ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "68d3f566d4db0b5c2f9d978bf04127eb.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/hi1.mp3":
+/*!************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/hi1.mp3 ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "d90f6c5c792171a5f2ed15cedc08522d.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/hi2.mp3":
+/*!************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/hi2.mp3 ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "b89abe81c6baa0b40162225a3fefe4eb.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/hi3.mp3":
+/*!************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/hi3.mp3 ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "b6ed76403afaaa574cc0258897f33390.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/index.js":
+/*!*************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/index.js ***!
+  \*************************************************/
+/*! exports provided: hi1, hi2, hi3, mid1, mid2, mid3, mid4, lo1, lo2, lo3, double, tick, loking */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _hi1_mp3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hi1.mp3 */ "./src/Game/Djembe/assets/samples/hi1.mp3");
+/* harmony import */ var _hi1_mp3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hi1_mp3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "hi1", function() { return _hi1_mp3__WEBPACK_IMPORTED_MODULE_0___default.a; });
+/* harmony import */ var _hi2_mp3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./hi2.mp3 */ "./src/Game/Djembe/assets/samples/hi2.mp3");
+/* harmony import */ var _hi2_mp3__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_hi2_mp3__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "hi2", function() { return _hi2_mp3__WEBPACK_IMPORTED_MODULE_1___default.a; });
+/* harmony import */ var _hi3_mp3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hi3.mp3 */ "./src/Game/Djembe/assets/samples/hi3.mp3");
+/* harmony import */ var _hi3_mp3__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_hi3_mp3__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "hi3", function() { return _hi3_mp3__WEBPACK_IMPORTED_MODULE_2___default.a; });
+/* harmony import */ var _mid1_mp3__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./mid1.mp3 */ "./src/Game/Djembe/assets/samples/mid1.mp3");
+/* harmony import */ var _mid1_mp3__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_mid1_mp3__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "mid1", function() { return _mid1_mp3__WEBPACK_IMPORTED_MODULE_3___default.a; });
+/* harmony import */ var _mid2_mp3__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./mid2.mp3 */ "./src/Game/Djembe/assets/samples/mid2.mp3");
+/* harmony import */ var _mid2_mp3__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_mid2_mp3__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "mid2", function() { return _mid2_mp3__WEBPACK_IMPORTED_MODULE_4___default.a; });
+/* harmony import */ var _mid3_mp3__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mid3.mp3 */ "./src/Game/Djembe/assets/samples/mid3.mp3");
+/* harmony import */ var _mid3_mp3__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_mid3_mp3__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "mid3", function() { return _mid3_mp3__WEBPACK_IMPORTED_MODULE_5___default.a; });
+/* harmony import */ var _mid4_mp3__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./mid4.mp3 */ "./src/Game/Djembe/assets/samples/mid4.mp3");
+/* harmony import */ var _mid4_mp3__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_mid4_mp3__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "mid4", function() { return _mid4_mp3__WEBPACK_IMPORTED_MODULE_6___default.a; });
+/* harmony import */ var _lo1_mp3__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./lo1.mp3 */ "./src/Game/Djembe/assets/samples/lo1.mp3");
+/* harmony import */ var _lo1_mp3__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_lo1_mp3__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "lo1", function() { return _lo1_mp3__WEBPACK_IMPORTED_MODULE_7___default.a; });
+/* harmony import */ var _lo2_mp3__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lo2.mp3 */ "./src/Game/Djembe/assets/samples/lo2.mp3");
+/* harmony import */ var _lo2_mp3__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_lo2_mp3__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "lo2", function() { return _lo2_mp3__WEBPACK_IMPORTED_MODULE_8___default.a; });
+/* harmony import */ var _lo3_mp3__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./lo3.mp3 */ "./src/Game/Djembe/assets/samples/lo3.mp3");
+/* harmony import */ var _lo3_mp3__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_lo3_mp3__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "lo3", function() { return _lo3_mp3__WEBPACK_IMPORTED_MODULE_9___default.a; });
+/* harmony import */ var _double_mp3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./double.mp3 */ "./src/Game/Djembe/assets/samples/double.mp3");
+/* harmony import */ var _double_mp3__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_double_mp3__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "double", function() { return _double_mp3__WEBPACK_IMPORTED_MODULE_10___default.a; });
+/* harmony import */ var _tick_mp3__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./tick.mp3 */ "./src/Game/Djembe/assets/samples/tick.mp3");
+/* harmony import */ var _tick_mp3__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_tick_mp3__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "tick", function() { return _tick_mp3__WEBPACK_IMPORTED_MODULE_11___default.a; });
+/* harmony import */ var _loking_mp3__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./loking.mp3 */ "./src/Game/Djembe/assets/samples/loking.mp3");
+/* harmony import */ var _loking_mp3__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_loking_mp3__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "loking", function() { return _loking_mp3__WEBPACK_IMPORTED_MODULE_12___default.a; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/lo1.mp3":
+/*!************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/lo1.mp3 ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "846e1cba88819cdaf23bcb43622abd68.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/lo2.mp3":
+/*!************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/lo2.mp3 ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "80761b857c521939e21691085983b8a5.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/lo3.mp3":
+/*!************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/lo3.mp3 ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "90a850d3636da0437786e900ea6fd46f.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/loking.mp3":
+/*!***************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/loking.mp3 ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "29d711ef50d5271369307c5371f221ec.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/mid1.mp3":
+/*!*************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/mid1.mp3 ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "8a0741cf976fc7394551cbede9dbe182.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/mid2.mp3":
+/*!*************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/mid2.mp3 ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "b57927353c24177694902f640bb91675.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/mid3.mp3":
+/*!*************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/mid3.mp3 ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "e568a4d1ae44e2d7c5a20df7dd32bd71.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/mid4.mp3":
+/*!*************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/mid4.mp3 ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "b04fa256416974df54b81909c9a98726.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/assets/samples/tick.mp3":
+/*!*************************************************!*\
+  !*** ./src/Game/Djembe/assets/samples/tick.mp3 ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "5494d59ce4f318407ade5f8264d4fa9f.mp3";
+
+/***/ }),
+
+/***/ "./src/Game/Djembe/index.js":
+/*!**********************************!*\
+  !*** ./src/Game/Djembe/index.js ***!
+  \**********************************/
+/*! exports provided: Djembe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Djembe", function() { return Djembe; });
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _Engine__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Engine */ "./src/Engine/index.js");
+/* harmony import */ var _assets__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./assets */ "./src/Game/Djembe/assets/index.js");
+
+
+
+
+
+
+
+
+
+
+
+var assets = {};
+_Engine__WEBPACK_IMPORTED_MODULE_9__["AudioManager"].addAssets(_assets__WEBPACK_IMPORTED_MODULE_10__["samples"]).then(function (results) {
+  lodash__WEBPACK_IMPORTED_MODULE_8___default.a.each(results, function (v) {
+    assets[v.key] = v.id;
+    console.log('asset ready', v);
+  });
+});
+var tapZoneKeys = ['loking', 'mid4', 'mid2', 'hi1', 'hi3', 'hi2'];
+
+var Djembe =
+/*#__PURE__*/
+function (_React$Component) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_6___default()(Djembe, _React$Component);
+
+  function Djembe(props) {
+    var _this;
+
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_2___default()(this, Djembe);
+
+    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5___default()(Djembe).call(this, props));
+
+    _this.handleClick = function (e) {
+      if (e.evt instanceof MouseEvent) {
+        _this.tap(e.evt.clientX, e.evt.clientY);
+
+        return;
+      }
+
+      if (e.evt instanceof TouchEvent) {
+        lodash__WEBPACK_IMPORTED_MODULE_8___default.a.each(e.evt.touches, function (t) {
+          _this.tap(t.clientX, t.clientY);
+        });
+
+        return;
+      }
+
+      throw new Error('Unrecognized event', e);
+    };
+
+    _this.image = new window.Image();
+    _this.image.src = _assets__WEBPACK_IMPORTED_MODULE_10__["logo"];
+
+    _this.calc();
+
+    return _this;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_3___default()(Djembe, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.calc();
+    }
+  }, {
+    key: "calc",
+    value: function calc() {
+      var _this$props = this.props,
+          x = _this$props.x,
+          y = _this$props.y,
+          width = _this$props.width,
+          height = _this$props.height;
+      this.cx = x + width / 2;
+      this.cy = y + height / 2;
+      this.r = Math.min(width / 2, height / 2);
+      var ringSize = this.r / 6;
+      this.r2 = Math.pow(this.r, 2);
+      this.hitZones = [Math.pow(ringSize * 0.5, 2), Math.pow(ringSize * 2, 2), Math.pow(ringSize * 3, 2), Math.pow(ringSize * 4, 2), Math.pow(ringSize * 5, 2), this.r2];
+      console.log(this);
+    }
+  }, {
+    key: "tap",
+    value: function tap(x, y) {
+      var distanceFromCenter = Math.pow(this.cx - x, 2) + Math.pow(this.cy - y, 2);
+
+      if (distanceFromCenter <= this.r2) {
+        var ringIdx = lodash__WEBPACK_IMPORTED_MODULE_8___default.a.findIndex(this.hitZones, function (z) {
+          return distanceFromCenter <= z;
+        });
+
+        _Engine__WEBPACK_IMPORTED_MODULE_9__["AudioManager"].play(assets[tapZoneKeys[ringIdx]]);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props2 = this.props,
+          x = _this$props2.x,
+          y = _this$props2.y,
+          width = _this$props2.width,
+          height = _this$props2.height;
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_Engine__WEBPACK_IMPORTED_MODULE_9__["GameImage"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_1___default()({
+        onClick: this.handleClick,
+        onTouchStart: this.handleClick,
+        src: _assets__WEBPACK_IMPORTED_MODULE_10__["logo"],
+        keepAspect: true,
+        centerInContainer: true
+      }, {
+        x: x,
+        y: y,
+        width: width,
+        height: height
+      }));
+    }
+  }]);
+
+  return Djembe;
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+
+Djembe.defaultProps = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, _Engine__WEBPACK_IMPORTED_MODULE_9__["RectangleProps"].defaultProps);
+Djembe.propTypes = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, _Engine__WEBPACK_IMPORTED_MODULE_9__["RectangleProps"].propTypes);
+
+
+/***/ }),
+
+/***/ "./src/Game/Game.js":
+/*!**************************!*\
+  !*** ./src/Game/Game.js ***!
+  \**************************/
+/*! exports provided: Game */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Game", function() { return Game; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Djembe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Djembe */ "./src/Game/Djembe/index.js");
+
+
+
+var Game = function Game(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Djembe__WEBPACK_IMPORTED_MODULE_1__["Djembe"], props);
+};
+
+
+
+/***/ }),
+
+/***/ "./src/Game/index.js":
+/*!***************************!*\
+  !*** ./src/Game/index.js ***!
+  \***************************/
+/*! exports provided: Game */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Game__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Game */ "./src/Game/Game.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Game", function() { return _Game__WEBPACK_IMPORTED_MODULE_0__["Game"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/Hot.js":
+/*!********************!*\
+  !*** ./src/Hot.js ***!
+  \********************/
+/*! exports provided: Hot */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Hot", function() { return Hot; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_hot_loader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js");
+/* harmony import */ var react_hot_loader__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_hot_loader__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./src/App.js");
+
+
+
+var Hot = Object(react_hot_loader__WEBPACK_IMPORTED_MODULE_1__["hot"])(module)(function (props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_2__["App"], null);
+});
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./src/app.scss":
+/*!**********************!*\
+  !*** ./src/app.scss ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../node_modules/css-loader!../node_modules/postcss-loader/src??ref--6-2!../node_modules/sass-loader/lib/loader.js??ref--6-3!./app.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/app.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -96047,12 +96203,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./src/App.js");
+/* harmony import */ var _Hot__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Hot */ "./src/Hot.js");
 
 
 
-document.addEventListener('deviceready', function () {
-  Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_2__["App"], null), document.getElementById('app'));
+document.addEventListener("deviceready", function () {
+  Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Hot__WEBPACK_IMPORTED_MODULE_2__["Hot"], null), document.getElementById("app"));
 }, false);
 
 /***/ }),
@@ -96064,7 +96220,7 @@ document.addEventListener('deviceready', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Volumes/Data/Sites/flow/src/index.js */"./src/index.js");
+module.exports = __webpack_require__(/*! /Volumes/Data/Sites/harvest/src/index.js */"./src/index.js");
 
 
 /***/ })

@@ -4,7 +4,7 @@
     <description>
         Virtual Djembe
     </description>
-    <author email="ben@benallfree.com" href="http://cordova.io">
+    <author email="ben@benallfree.com" href="http://github.com/benallfree/harvest">
         Ben Allfree
     </author>
     <content src="index.html" />
@@ -29,6 +29,6 @@
             <false />
         </edit-config>
     </platform>
-    <plugin name="cordova-plugin-file" spec="^6.0.1" />
+    <preference name="BackgroundColor" value="0xff000000" />
     <engine name="ios" spec="^4.5.5" />
 </widget>

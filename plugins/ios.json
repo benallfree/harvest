@@ -9,9 +9,6 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.benallfree.harvest"
-    },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.benallfree.harvest"
     }
   },
   "dependent_plugins": {}

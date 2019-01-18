@@ -1,2 +1,2 @@
 let mix = require("cordova-submix");
-mix.react("src/index.js", "index.js").version();
+mix.react("src/index.js", "index.js");
